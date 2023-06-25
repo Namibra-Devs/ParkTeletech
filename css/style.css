@@ -355,13 +355,13 @@ background-color: transparent !important;
     color: white;
 }
 .teletech {
-    width: 23vw;
+    width: 40vw;
     display: grid;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    gap: 3rem;
+    row-gap: 3rem;
 }
-.teletech .logo {
+.teletech .footer-logo {
     margin-bottom: 1rem;
 }
 .teletech p {
@@ -559,6 +559,12 @@ background-color: transparent !important;
         font-size: 1.25rem;
         border-left: none;
         padding-left: 0;
+      }
+      .service-vision {
+        width: 28vw;
+        min-width: 20rem;
+        /* padding-left: 1rem;
+        border-left: 4px solid #448ADC; */
       }
 }
 
