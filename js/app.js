@@ -1,9 +1,24 @@
+// *****************FIXED NAV***************
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+    const scrollHeight = window.pageYOffset;
+    const navHeight = navbar.getBoundingClientRect().height;
+
+    if(scrollHeight > navHeight) {
+        navbar.classList.add("fixed-nav");
+     
+    } else {
+        navbar.classList.remove("fixed-nav");
+    }
+})
+//  ======================TOGGLE NAV==========================
 const toggleBtn = document.querySelector(".toggle"),
       closeCartBtn = document.querySelector(".close-nav"), 
       navDOM = document.querySelector(".navbar-details"),
       navBarOverlay = document.querySelector(".navbar-overlay");
 
-//  Toggle Cart
 toggleBtn.addEventListener("click", () => {
     navBarOverlay.classList.add("transparentBcg");
     navDOM.classList.add("showNav"); 
@@ -14,49 +29,35 @@ navBarOverlay.classList.remove("transparentBcg");
 navDOM.classList.remove("showNav"); 
 });
 
+// =========================ACORDION=========================
+const questions= document.querySelectorAll(".question"); 
 
-$(".carousel").owlCarousel({
-    margin:10,
-    loop: true,
-    autoplay:true,
-    autoplayTimeout:5000,
-    autoplayHoverPause:true,
-    responsive: {
-          0: {
-            items:1,
-            nav:false,
-          },
-          768: {
-            items:2,
-            nav:false,
-          },
-          1000: {
-            items:3,
-            nav:false,
-          },
-          1400: {
-            items:3,
-            nav:false,
-          },
-          1500: {
-            items:3,
-            nav:true,
-          }
-    }
+questions.forEach((question) => {
+const btn= question.querySelector(".question-btn"); 
 
-})
+     btn.addEventListener("click", () => {
+      questions.forEach((item) => {
+        if(item !== question) {
+           item.classList.remove("show-text");
+        }
+      });
+      question.classList.toggle("show-text");
 
-// const info = document.querySelectorAll(".member-info p"),
-  const toggleTextBtns = document.querySelectorAll(".toggle-text");
+     });
+     });
+// =====================toggle application form===============
+const applyBtns = document.querySelectorAll(".apply-btn"),
+      closeFormBtn = document.querySelector(".close-form"),
+     application = document.querySelector(".application");
 
-      toggleTextBtns.forEach(( toggleTextBtn) => {
-        toggleTextBtn.addEventListener("click", (e) => {
-           const popupMenus = e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling;  
-            popupMenus.classList.toggle("show-info");
-            console.log("click");
-          })
-         
-      })
+     applyBtns.forEach((applyBtn) => {
+      applyBtn.addEventListener("click", () => {
+        application.classList.add("application-show"); 
+      });
+     })
+     closeFormBtn.addEventListener("click", () => {
+      application.classList.remove("application-show"); 
+     })
 
 const date = document.getElementById("date");
 date.innerHTML = new Date().getFullYear();
