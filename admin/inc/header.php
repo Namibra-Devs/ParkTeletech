@@ -31,7 +31,7 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JM Street-Life Studios - Admin Panel</title>
+	<title><?php echo $website_name ?> - Admin Panel</title>
 
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -175,6 +175,14 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 					<li class="treeview <?php if( ($cur_page == 'service-add.php')||($cur_page == 'service.php')||($cur_page == 'service-edit.php') ) {echo 'active';} ?>">
 			          <a href="service.php">
 			            <i class="fa fa-hand-o-right"></i> <span>Service</span>
+			          </a>
+			        </li>
+
+
+					<!-- Expertise -->
+					<li class="treeview <?php if( ($cur_page == 'expertise-add.php')||($cur_page == 'expertise.php')||($cur_page == 'expertise-edit.php') ) {echo 'active';} ?>">
+			          <a href="expertise.php">
+			            <i class="fa fa-hand-o-right"></i> <span>Expertise</span>
 			          </a>
 			        </li>
 
