@@ -123,6 +123,14 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 			        </li>
 
 
+					<!-- Pages -->
+					<li class="treeview <?php if( ($cur_page == 'page-add.php')||($cur_page == 'page.php')||($cur_page == 'page-edit.php') ) {echo 'active';} ?>">
+			          <a href="page.php">
+			            <i class="fa fa-hand-o-right"></i> <span>Page</span>
+			          </a>
+			        </li>
+
+
 					<!-- Blog -->
 					<li class="treeview <?php if( ($cur_page == 'category-add.php')||($cur_page == 'category.php')||($cur_page == 'category-edit.php') || ($cur_page == 'blog-add.php')||($cur_page == 'blog.php')||($cur_page == 'blog-edit.php') || ($cur_page == 'comment.php') ) {echo 'active';} ?>">
 						<a href="#">
@@ -185,6 +193,14 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 			            <i class="fa fa-hand-o-right"></i> <span>Expertise</span>
 			          </a>
 			        </li>
+					
+					
+					<!-- Why choose us -->
+					<li class="treeview <?php if( ($cur_page == 'why_us-add.php')||($cur_page == 'why_us.php')||($cur_page == 'why_us-edit.php') ) {echo 'active';} ?>">
+					  <a href="why_us.php">
+						<i class="fa fa-hand-o-right"></i> <span>Why Choose Us</span>
+					  </a>
+					</li>
 
 
 					<!-- photo -->
@@ -218,25 +234,7 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 			          <a href="social-media.php">
 			            <i class="fa fa-hand-o-right"></i> <span>Social Media</span>
 			          </a>
-			        </li>
-
-
-
-			        <li class="treeview <?php if( ($cur_page == 'subscriber.php')||($cur_page == 'subscriber-email.php') ) {echo 'active';} ?>">
-						<a href="#">
-							<i class="fa fa-hand-o-right"></i>
-							<span>Subscriber</span>
-							<span class="pull-right-container">
-								<i class="fa fa-angle-left pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="subscriber.php"><i class="fa fa-circle-o"></i> All Subscribers</a></li>
-							<li><a href="subscriber-email.php"><i class="fa fa-circle-o"></i> Email to Subscribers</a></li>
-						</ul>
-					</li>
-
-        
+			        </li>        
       			</ul>
     		</section>
   		</aside>
