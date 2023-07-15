@@ -194,7 +194,25 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 			          </a>
 			        </li>
 					
+
+
+					<!-- Jobs -->
+					<li class="treeview <?php if( ($cur_page == 'job-category-add.php')||($cur_page == 'job-category.php')||($cur_page == 'job-category-edit.php') || ($cur_page == 'job-add.php')||($cur_page == 'jobs.php')||($cur_page == 'job-edit.php') ) {echo 'active';} ?>">
+						<a href="#">
+							<i class="fa fa-hand-o-right"></i>
+							<span>Jobs</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="job-category.php"><i class="fa fa-circle-o"></i> Category</a></li>
+							<li><a href="jobs.php"><i class="fa fa-circle-o"></i> Job</a></li>
+						</ul>
+					</li>
 					
+
+
 					<!-- Why choose us -->
 					<li class="treeview <?php if( ($cur_page == 'why_us-add.php')||($cur_page == 'why_us.php')||($cur_page == 'why_us-edit.php') ) {echo 'active';} ?>">
 					  <a href="why_us.php">

@@ -14,11 +14,6 @@ if(isset($_POST['form1'])) {
 		$error_message .= 'content can not be empty<br>';
 	}
 
-	if(empty($_POST['short_content'])) {
-		$valid = 0;
-		$error_message .= 'Short content can not be empty<br>';
-	}
-	
     $path = $_FILES['photo']['name'];
     $path_tmp = $_FILES['photo']['tmp_name'];
 
@@ -41,9 +36,9 @@ if(isset($_POST['form1'])) {
 		}
 
 
-		if($path == '' && $path1 == '') {
-			$statement = $pdo->prepare("UPDATE tbl_why_us SET name=?, content=? WHERE id=?");
-    		$statement->execute(array($_POST['name'], $_POST['content'], $_REQUEST['id']));
+		if($path == '') {
+			$statement = $pdo->prepare("UPDATE tbl_why_us SET title=?, content=? WHERE id=?");
+    		$statement->execute(array($_POST['title'], $_POST['content'], $_REQUEST['id']));
 		}
 		// if($path != '' && $path1 == '') {
 		// 	unlink('../assets/uploads/why_us/'.$_POST['current_photo']);
@@ -71,7 +66,7 @@ if(isset($_POST['form1'])) {
         	move_uploaded_file( $path_tmp, '../assets/uploads/why_us/'.$final_name );
 
 
-        	$statement = $pdo->prepare("UPDATE tbl_why_us SET name=?, content=?, photo=? WHERE id=?");
+        	$statement = $pdo->prepare("UPDATE tbl_why_us SET title=?, content=?, photo=? WHERE id=?");
     		$statement->execute(array($_POST['title'], $_POST['content'],$final_name, $_REQUEST['id']));
 		}
 
