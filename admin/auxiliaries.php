@@ -118,6 +118,46 @@ function getBlogs()
   }
 }
 
+function getTeam()
+{
+  include('./admin/database/config.php');
+  $statement = $pdo->prepare("SELECT 
+                                  t1.id,
+                                  t1.name,
+                                  t1.slug,
+                                  t1.designation_id,
+                                  t1.photo,
+                                  t1.detail,
+
+                                  t2.designation_id,
+												          t2.designation_name
+
+                                  FROM tbl_team_member t1
+                                  JOIN tbl_designation t2
+                                  ON t1.designation_id = t2.designation_id
+                                  ");
+  $statement->execute();
+  $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($result as $member) {
+
+    echo  '
+    <div class="team-member">
+            <div class="member-details">
+                <img src="./assets/uploads/team/'.$member['photo'].'" alt="">
+                <div class="member-title">
+                  <h4>'.$member['name'].'</h4>
+                  <p>'.$member['designation_name'].'</p> 
+                </div>
+                <div class="member-info">
+                    <p>'.$member['detail'].'</p>
+                </div>
+            </div>
+            
+        </div>
+            ';
+  }
+}
+
 // Social icons function
 function getSocialIcons()
 {

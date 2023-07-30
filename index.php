@@ -51,7 +51,7 @@
             </div>
         </div>
     </section>
-    <div class="navbar-overlay">
+    <!-- <div class="navbar-overlay">
         <div class="navbar-details">
             <span class="close-nav">
                 <i class="fas fa-window-close"></i>
@@ -67,7 +67,7 @@
                 <a href="contact.html">Contact Us</a>
             </div>
         </div>
-    </div>
+    </div> -->
     <section class="services">
         <div class="title">
             <h1>OUR SERVICES</h1>

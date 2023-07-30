@@ -28,12 +28,12 @@ include('./admin/database/config.php')
                 <a>Park Teletech</a>
             </div>
             <div class="navbar-links">
-                <a href="home.html" class="active-link">Home</a>
-                <a href="aboutUs.html">About us</a>
-                <a href="services.html">Services</a>
+                <a href="index.php">Home</a>
+                <a href="aboutUs.php">About us</a>
+                <a href="services.php">Services</a>
                 <a href="portfolio.html">Portfolio</a>
-                <a href="blog.html">Blog</a>
-                <a href="career.html">Careers</a>
+                <a href="blog.php">Blog</a>
+                <a href="career.php">Careers</a>
                 <a href="health.html">Health & Safety</a>
                 <a href="contact.html">Contact Us</a>
             </div>
@@ -42,3 +42,21 @@ include('./admin/database/config.php')
             </div>
         </div>
     </div>
+
+    <div class="navbar-overlay">
+    <div class="navbar-details">   
+        <span class="close-nav">
+            <i class="fas fa-window-close"></i>
+        </span>
+        <div class="overlay-links">
+            <a href="index.php">Home</a>
+            <a href="aboutUs.php">About us</a>
+            <a href="services.php">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.php">Blog</a>
+            <a href="career.php">Careers</a>
+            <a href="health.html">Health & Safety</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+</div>
