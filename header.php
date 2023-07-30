@@ -34,7 +34,7 @@ include('./admin/database/config.php')
                 <a href="portfolio.html">Portfolio</a>
                 <a href="blog.php">Blog</a>
                 <a href="career.php">Careers</a>
-                <a href="health.html">Health & Safety</a>
+                <a href="health.php">Health & Safety</a>
                 <a href="contact.html">Contact Us</a>
             </div>
             <div class="toggle">
@@ -55,7 +55,7 @@ include('./admin/database/config.php')
             <a href="portfolio.html">Portfolio</a>
             <a href="blog.php">Blog</a>
             <a href="career.php">Careers</a>
-            <a href="health.html">Health & Safety</a>
+            <a href="health.php">Health & Safety</a>
             <a href="contact.html">Contact Us</a>
         </div>
     </div>

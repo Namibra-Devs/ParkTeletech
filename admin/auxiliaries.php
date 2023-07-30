@@ -41,6 +41,42 @@ function getServices()
 }
 
 
+// get services function
+function getOfficerAtWork()
+{
+  include('./admin/database/config.php');
+  $statement = $pdo->prepare("SELECT photo_name FROM tbl_photo WHERE p_category_id=5"); // Category id for officers is 5
+  $statement->execute();
+  $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($result as $photo) {
+
+    echo  '
+    <div class="expertise-box officer">
+    <img src="./assets/uploads/'.$photo['photo_name'].'" alt="'.$photo['photo_name'].'">
+</div>
+          ';
+  }
+}
+
+
+// get services function
+function getCerticates()
+{
+  include('./admin/database/config.php');
+  $statement = $pdo->prepare("SELECT photo_name FROM tbl_photo WHERE p_category_id=6"); // Category id for certificates is 6
+  $statement->execute();
+  $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($result as $photo) {
+
+    echo  '
+    <div class="certificate-img">
+    <img src="./assets/uploads/'.$photo['photo_name'].'" alt="'.$photo['photo_name'].'">
+</div>
+          ';
+  }
+}
+
+
 // get Expertise Techonology function
 function getExpertise()
 {
