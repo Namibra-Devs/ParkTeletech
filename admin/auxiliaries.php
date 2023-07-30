@@ -52,7 +52,7 @@ function getOfficerAtWork()
 
     echo  '
     <div class="expertise-box officer">
-    <img src="./assets/uploads/'.$photo['photo_name'].'" alt="'.$photo['photo_name'].'">
+    <img src="./assets/uploads/' . $photo['photo_name'] . '" alt="' . $photo['photo_name'] . '">
 </div>
           ';
   }
@@ -70,8 +70,28 @@ function getCerticates()
 
     echo  '
     <div class="certificate-img">
-    <img src="./assets/uploads/'.$photo['photo_name'].'" alt="'.$photo['photo_name'].'">
+    <img src="./assets/uploads/' . $photo['photo_name'] . '" alt="' . $photo['photo_name'] . '">
 </div>
+          ';
+  }
+}
+
+function getSlider()
+{
+  include('./admin/database/config.php');
+  $statement = $pdo->prepare("SELECT photo, heading, content, button_text, button_url, position  FROM tbl_slider"); // Category id for certificates is 6
+  $statement->execute();
+  $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($result as $slider) {
+
+    echo  '
+    <div class="slider1" style="background:linear-gradient(rgba(0, 0, 0, 0.711), rgba(0, 0, 0, 0.711)), url(./assets/uploads/slider/'.$slider['photo'].'); background-size:cover; background-repeat:no-repeat; background-position:center">
+                <div class="home_banner_text">
+                    <h1>'.$slider['heading'].'</h1>
+                    <p>'.$slider['content'].'</p>
+                    <a href="'.$slider['button_url'].'">'.$slider['button_text'].'</a>
+                </div>
+            </div>
           ';
   }
 }
@@ -117,8 +137,8 @@ function getTestimonials()
     echo  '
     <div class="card">
     <img src="img/bi_quote.png" alt="">
-    <p>'.$testimonial['comment'].'</p>
-    <h3>'.$testimonial['company'].'</h3>
+    <p>' . $testimonial['comment'] . '</p>
+    <h3>' . $testimonial['company'] . '</h3>
 </div>
           ';
   }
@@ -142,12 +162,12 @@ function getBlogs()
     echo  '
     <div class="blog-details">
     <div class="blog-img">
-        <img src="./assets/uploads/blog/'.$blog_image.'" alt="'.$blog_image.'">
+        <img src="./assets/uploads/blog/' . $blog_image . '" alt="' . $blog_image . '">
     </div>
     <div class="blog-details-text">
-        <p><button type="button" style="background-color: #C2EDCC;">News</button> '.$blog_date.'</p>
-        <h3>'.$blog_title.'</h3>
-        <p>'.$blog_content.'</p>
+        <p><button type="button" style="background-color: #C2EDCC;">News</button> ' . $blog_date . '</p>
+        <h3>' . $blog_title . '</h3>
+        <p>' . $blog_content . '</p>
     </div>
 </div>
             ';
@@ -179,13 +199,13 @@ function getTeam()
     echo  '
     <div class="team-member">
             <div class="member-details">
-                <img src="./assets/uploads/team/'.$member['photo'].'" alt="">
+                <img src="./assets/uploads/team/' . $member['photo'] . '" alt="">
                 <div class="member-title">
-                  <h4>'.$member['name'].'</h4>
-                  <p>'.$member['designation_name'].'</p> 
+                  <h4>' . $member['name'] . '</h4>
+                  <p>' . $member['designation_name'] . '</p> 
                 </div>
                 <div class="member-info">
-                    <p>'.$member['detail'].'</p>
+                    <p>' . $member['detail'] . '</p>
                 </div>
             </div>
             

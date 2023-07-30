@@ -31,11 +31,11 @@ include('./admin/database/config.php')
                 <a href="index.php">Home</a>
                 <a href="aboutUs.php">About us</a>
                 <a href="services.php">Services</a>
-                <a href="portfolio.html">Portfolio</a>
+                <a href="portfolio.php">Portfolio</a>
                 <a href="blog.php">Blog</a>
                 <a href="career.php">Careers</a>
                 <a href="health.php">Health & Safety</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="contact.php">Contact Us</a>
             </div>
             <div class="toggle">
                 <i class="fa fa-bars"></i>
@@ -52,11 +52,11 @@ include('./admin/database/config.php')
             <a href="index.php">Home</a>
             <a href="aboutUs.php">About us</a>
             <a href="services.php">Services</a>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="portfolio.php">Portfolio</a>
             <a href="blog.php">Blog</a>
             <a href="career.php">Careers</a>
             <a href="health.php">Health & Safety</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.php">Contact Us</a>
         </div>
     </div>
 </div>

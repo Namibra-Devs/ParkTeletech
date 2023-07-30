@@ -6,7 +6,9 @@
     <!-- Main body section -->
     <section class="home">
         <div class="slider-wrapper owl-carousel owl-theme" id="hero-slider">
-            <div class="slider1">
+
+            <?php getSlider() ?>
+            <!-- <div class="slider1">
                 <div class="home_banner_text">
                     <h1>Leading the Way in Seamless Telecommunications Connectivity.</h1>
                     <p>At Park Teletech Africa Limited, we specialize in designing, constructing, and maintaining
@@ -48,7 +50,7 @@
                         Partner with us for excellence in telecommunications infrastructure development.</p>
                     <a href="#">Experience Our Services</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- <div class="navbar-overlay">
