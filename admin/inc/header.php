@@ -208,6 +208,7 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 						<ul class="treeview-menu">
 							<li><a href="job-category.php"><i class="fa fa-circle-o"></i> Category</a></li>
 							<li><a href="jobs.php"><i class="fa fa-circle-o"></i> Job</a></li>
+							<li><a href="applications.php"><i class="fa fa-circle-o"></i> applications</a></li>
 						</ul>
 					</li>
 					
@@ -252,8 +253,16 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 			          <a href="social-media.php">
 			            <i class="fa fa-hand-o-right"></i> <span>Social Media</span>
 			          </a>
-			        </li>        
-      			</ul>
+			        </li>       
+					
+					
+					<!-- Messages -->
+					<li class="treeview <?php if( ($cur_page == 'messages.php') ) {echo 'active';} ?>">
+					  <a href="social-media.php">
+						<i class="fa fa-hand-o-right"></i> <span>Messages</span>
+					  </a>
+					</li>        
+				</ul>
     		</section>
   		</aside>
 

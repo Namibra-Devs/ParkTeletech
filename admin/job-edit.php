@@ -134,19 +134,19 @@ foreach ($result as $row) {
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label">Job Salary </label>
 							<div class="col-sm-8">
-								<textarea class="form-control" name="salary" ><?php $salary ?></textarea>
+								<textarea class="form-control" name="salary" ><?php echo $salary ?></textarea>
 							</div>
 						</div>		
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label">Job Benefit </label>
 							<div class="col-sm-8">
-								<textarea class="form-control editor" name="job_benefit" ><?php $benefit ?></textarea>
+								<textarea class="form-control editor" name="job_benefit" ><?php echo $benefit ?></textarea>
 							</div>
 						</div>		
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label">More info </label>
 							<div class="col-sm-8">
-								<textarea class="form-control editor" name="more_info" ><?php $more_info ?></textarea>
+								<textarea class="form-control editor" name="more_info" ><?php echo $more_info ?></textarea>
 							</div>
 						</div>		
 						<div class="form-group">
