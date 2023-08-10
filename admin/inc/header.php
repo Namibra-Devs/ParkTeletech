@@ -237,15 +237,6 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 						</ul>
 					</li>
 
-					
-					
-
-
-					<li class="treeview <?php if( ($cur_page == 'file-add.php')||($cur_page == 'file.php')||($cur_page == 'file-edit.php') ) {echo 'active';} ?>">
-			          <a href="file.php">
-			            <i class="fa fa-hand-o-right"></i> <span>File Upload (Media)</span>
-			          </a>
-			        </li>
 
 
 					
