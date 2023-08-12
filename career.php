@@ -8,8 +8,8 @@ if (isset($_POST['application-submit'])) {
     $error_message = '';
     $success_message = '';
 
-    // $path = $_FILES['cv']['name'];
-    // $path_tmp = $_FILES['cv']['tmp_name'];
+    $path = $_FILES['cv']['name'];
+    $path_tmp = $_FILES['cv']['tmp_name'];
 
     if (empty($_POST['name'])) {
         $valid = 0;
@@ -34,17 +34,17 @@ if (isset($_POST['application-submit'])) {
         echo "<script>alert('".$success_message."')</script>";
     }
 
-    // if ($path != '') {
-    //     $ext = pathinfo($path, PATHINFO_EXTENSION);
-    //     $file_name = basename($path, '.' . $ext);
-    //     if ($ext != 'pdf') {
-    //         $valid = 0;
-    //         $error_message .= 'Your file must be in a pdf format<br>';
-    //     }
-    // } else {
-    //     $valid = 0;
-    //     $error_message .= 'You must have to upload your CV/Resume<br>';
-    // }
+    if ($path != '') {
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+        $file_name = basename($path, '.' . $ext);
+        if ($ext != 'pdf') {
+            $valid = 0;
+            $error_message .= 'Your file must be in a pdf format<br>';
+        }
+    } else {
+        $valid = 0;
+        $error_message .= 'You must have to upload your CV/Resume<br>';
+    }
 
     // if ($valid == 1) {
 
