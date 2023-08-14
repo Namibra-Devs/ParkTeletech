@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2023 at 03:04 PM
+-- Generation Time: Aug 14, 2023 at 03:19 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `parkteletech`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_application`
+--
+
+CREATE TABLE `tbl_application` (
+  `job_id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `cv` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -299,6 +312,26 @@ INSERT INTO `tbl_language` (`id`, `name`, `value`) VALUES
 (44, 'CONTACT_FORM_MESSAGE', 'Contact Form Message'),
 (45, 'CONTACT_FORM_SUCCESS_MESSAGE', 'Email is sent successfully. '),
 (46, 'SUBSCRIPTION_SUBJECT', 'Subscriber Email Confirmation');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_messages`
+--
+
+CREATE TABLE `tbl_messages` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `message` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tbl_messages`
+--
+
+INSERT INTO `tbl_messages` (`id`, `name`, `email`, `message`) VALUES
+(2, 'Abdul-Gafur Saeed', 'abdulgafurshaattir@gmail.com', 'Hello, this is a trial message');
 
 -- --------------------------------------------------------
 
@@ -683,6 +716,12 @@ INSERT INTO `tbl_why_us` (`id`, `title`, `content`, `photo`) VALUES
 --
 
 --
+-- Indexes for table `tbl_application`
+--
+ALTER TABLE `tbl_application`
+  ADD PRIMARY KEY (`job_id`);
+
+--
 -- Indexes for table `tbl_blogs`
 --
 ALTER TABLE `tbl_blogs`
@@ -752,6 +791,12 @@ ALTER TABLE `tbl_job_category`
 -- Indexes for table `tbl_language`
 --
 ALTER TABLE `tbl_language`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_messages`
+--
+ALTER TABLE `tbl_messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -837,6 +882,12 @@ ALTER TABLE `tbl_why_us`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_application`
+--
+ALTER TABLE `tbl_application`
+  MODIFY `job_id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_blogs`
 --
 ALTER TABLE `tbl_blogs`
@@ -907,6 +958,12 @@ ALTER TABLE `tbl_job_category`
 --
 ALTER TABLE `tbl_language`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT for table `tbl_messages`
+--
+ALTER TABLE `tbl_messages`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_our_officers`
