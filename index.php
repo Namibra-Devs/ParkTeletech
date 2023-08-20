@@ -2,74 +2,53 @@
     <?php
     include('header.php')
     ?>
+    <?php
+    $valid = 1;
+    $error_message = '';
+    $success_message = '';
+    if(isset($_POST['contact_form'])) {
+        if(empty($_POST['name'])) {
+            $valid = 0;
+            $error_message .= 'Name field is empty';
+        };
+
+        if(empty($_POST['email'])) {
+            $valid = 0;
+            $error_message .= 'Email field is empty';
+        } else {
+            if(!(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))) {
+                $valid = 0;
+                $error_message = 'email must be in the form example@example.com';
+            }
+        };
+
+        if(empty($_POST['message'])) {
+            $valid = 0;
+            $error_message .= 'Message field is empty';
+        };
+        
+        if($valid = 1 ) {
+            $visitor_name = strip_tags($_POST['name']);
+            $visitor_email = strip_tags($_POST['email']);
+            $visitor_message = strip_tags($_POST['message']);
+        }
+    }
+
+    if($error_message != '') {
+        echo "<script>alert('".$error_message."')</script>";
+    }
+    if($success_message != '') {
+        echo "<script>alert('".$success_message."')</script>";
+    }
+    ?>
 
     <!-- Main body section -->
     <section class="home">
         <div class="slider-wrapper owl-carousel owl-theme" id="hero-slider">
 
             <?php getSlider() ?>
-            <!-- <div class="slider1">
-                <div class="home_banner_text">
-                    <h1>Leading the Way in Seamless Telecommunications Connectivity.</h1>
-                    <p>At Park Teletech Africa Limited, we specialize in designing, constructing, and maintaining
-                        cutting-edge cell towers. Our technical expertise, advanced technologies, and unwavering
-                        commitment to quality ensure seamless connectivity across Africa.
-                        Partner with us for excellence in telecommunications infrastructure development.</p>
-                    <a href="#">Experience Our Services</a>
-                </div>
-            </div>
-
-            <div class="slider2">
-                <div class="home_banner_text">
-                    <h1>Leading the Way in Seamless Telecommunications Connectivity.</h1>
-                    <p>At Park Teletech Africa Limited, we specialize in designing, constructing, and maintaining
-                        cutting-edge cell towers. Our technical expertise, advanced technologies, and unwavering
-                        commitment to quality ensure seamless connectivity across Africa.
-                        Partner with us for excellence in telecommunications infrastructure development.</p>
-                    <a href="#">Experience Our Services</a>
-                </div>
-            </div>
-
-            <div class="slider3">
-                <div class="home_banner_text">
-                    <h1>Leading the Way in Seamless Telecommunications Connectivity.</h1>
-                    <p>At Park Teletech Africa Limited, we specialize in designing, constructing, and maintaining
-                        cutting-edge cell towers. Our technical expertise, advanced technologies, and unwavering
-                        commitment to quality ensure seamless connectivity across Africa.
-                        Partner with us for excellence in telecommunications infrastructure development.</p>
-                    <a href="#">Experience Our Services</a>
-                </div>
-            </div>
-
-            <div class="slider4">
-                <div class="home_banner_text">
-                    <h1>Leading the Way in Seamless Telecommunications Connectivity.</h1>
-                    <p>At Park Teletech Africa Limited, we specialize in designing, constructing, and maintaining
-                        cutting-edge cell towers. Our technical expertise, advanced technologies, and unwavering
-                        commitment to quality ensure seamless connectivity across Africa.
-                        Partner with us for excellence in telecommunications infrastructure development.</p>
-                    <a href="#">Experience Our Services</a>
-                </div>
-            </div> -->
         </div>
     </section>
-    <!-- <div class="navbar-overlay">
-        <div class="navbar-details">
-            <span class="close-nav">
-                <i class="fas fa-window-close"></i>
-            </span>
-            <div class="overlay-links">
-                <a href="home.html">Home</a>
-                <a href="aboutUs.html">About us</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="blog.html">Blog</a>
-                <a href="career.html">Careers</a>
-                <a href="health.html">Health & Safety</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
-        </div>
-    </div> -->
     <section class="services">
         <div class="title">
             <h1>OUR SERVICES</h1>
@@ -177,14 +156,15 @@
         </div>
         <div class="contact-details">
             <div class="form">
-                <form action="">
-                    <label for="">Name</label>
-                    <input type="text" name="" id="">
+                <form action="" method="post">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="">
                     <label for="">Email</label>
-                    <input type="email" name="" id="">
+                    <input type="email" name="email" id="">
                     <label for="">Message</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <button type="submit">Send Message</button>
+                    <textarea name="message" id="" cols="30" rows="10"></textarea>
+                    <input type="submit" name="contact_form" value="Send Message">
+                    <!-- <button type="submit">Send Message</button> -->
                 </form>
             </div>
             <div class="location">
