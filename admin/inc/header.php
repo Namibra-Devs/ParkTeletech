@@ -258,7 +258,7 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+
 					
 					<!-- Messages -->
 					<li class="treeview <?php if( ($cur_page == 'messages.php') ) {echo 'active';} ?>">
-					  <a href="social-media.php">
+					  <a href="messages.php">
 						<i class="fa fa-hand-o-right"></i> <span>Messages</span>
 					  </a>
 					</li>        

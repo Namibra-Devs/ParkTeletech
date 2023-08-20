@@ -31,6 +31,11 @@
             $visitor_name = strip_tags($_POST['name']);
             $visitor_email = strip_tags($_POST['email']);
             $visitor_message = strip_tags($_POST['message']);
+
+            $statement = $pdo->prepare("INSERT INTO tbl_messages (name, email, message) VALUES (?,?,?)");
+            $statement->execute(array($visitor_name, $visitor_email, $visitor_message));
+
+            $success_message = "Message Sent successfully";
         }
     }
 
